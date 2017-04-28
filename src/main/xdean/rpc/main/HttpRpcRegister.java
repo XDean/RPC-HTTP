@@ -107,10 +107,7 @@ public class HttpRpcRegister implements IRpcRegister, Constants {
 
 		Method method;
 		String methodSignature = paramMap.get(KEY.METHOD_SIGN);
-//		if (methodSignature.equals(TOSTRING_SIGN))
-//			method = TOSTRING_METHOD;
-//		else
-			method = ReflectUtil.getMethod(ReflectUtil.getClass(className), methodSignature);
+		method = ReflectUtil.getMethod(ReflectUtil.getClass(className), methodSignature);
 
 		List<Object> paramObjects = new ArrayList<>();
 		if (method.getParameterCount() > 0) {
